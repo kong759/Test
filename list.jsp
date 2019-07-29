@@ -1,4 +1,4 @@
-<%@page import="java.text.SimpleDateFormat"%>
+ï»¿<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="board.BoardDataBean"%>
 <%@page import="java.util.List"%>
 <%@page import="board.BoardDBBeanMysql"%>
@@ -23,11 +23,11 @@ if(boardid==null) boardid="1";
 %>
    <%
    BoardDBBeanMysql dbPro = BoardDBBeanMysql.getInstance();
-   int pageSize =3; //ÇÑ ÆäÀÌÁö¿¡ 3°³¾¿
+   int pageSize =3; //í•œ íŽ˜ì´ì§€ì— 3ê°œì”©
    
    String pageNum = request.getParameter("pageNum");
    if(pageNum == null || pageNum == ""){
-	   pageNum = "1"; //url¿¡ pageNumÀÌ ³Ñ¾î°¡¸é ¼³Á¤
+	   pageNum = "1"; //urlì— pageNumì´ ë„˜ì–´ê°€ë©´ ì„¤ì •
    }
    int currentPage = Integer.parseInt(pageNum);
    int count = dbPro.getArticleCount(boardid);
@@ -44,28 +44,28 @@ if(boardid==null) boardid="1";
    
    <div class="w3-container">
    <span class="w3-center w3-larger">
-   <h3>(ÀüÃ¼ ±Û:<%=count %>)
+   <h3>(ì „ì²´ ê¸€:<%=count %>)
    </h3>
    </span>
    <p class="w3-right w3-padding-right-large">
-   <a href="writerForm.jsp?pageNum=<%=pageNum%>">±Û¾²±â</a>
+   <a href="writerForm.jsp?pageNum=<%=pageNum%>">ê¸€ì“°ê¸°</a>
    </p>
    
    <%if(count==0){ %>
    <table class = "w3-table-all" width="700">
       <tr class="w3-grey">
-         <td align="center" width="50">ÀúÀåµÈ ±ÛÀÌ ¾ø½À´Ï´Ù.</td>
+         <td align="center" width="50">ì €ìž¥ëœ ê¸€ì´ ì—†ìŠµë‹ˆë‹¤.</td>
       </tr>
    </table>
    <%} else{ %>
    
    <table class = "w3-table-all" width="700">
       <tr class="w3-grey">
-         <td align="center" width="50">¹øÈ£</td>
-         <td align="center" width="250">Á¦ ¸ñ</td>
-         <td align="center" width="100">ÀÛ¼ºÀÚ</td>
-         <td align="center" width="150">ÀÛ¼ºÀÏ</td>
-         <td align="center" width="50">Á¶ È¸</td>
+         <td align="center" width="50">ë²ˆí˜¸</td>
+         <td align="center" width="250">ì œ ëª©</td>
+         <td align="center" width="100">ìž‘ì„±ìž</td>
+         <td align="center" width="150">ìž‘ì„±ì¼</td>
+         <td align="center" width="50">ì¡° íšŒ</td>
          <td align="center" width="100">IP</td>
       </tr>
       <%   
@@ -110,14 +110,15 @@ if(boardid==null) boardid="1";
    
    %>
    
-   <% if(startPage>bottomLine){ %><a href="list.jsp?pageNum=<%=startPage - bottomLine%>">[ÀÌÀü]</a> <%} %>
+   <% if(startPage>bottomLine){ %><a href="list.jsp?pageNum=<%=startPage - bottomLine%>">[ì´ì „]</a> <%} %>
    
    <% for (int i= startPage; i <= endPage; i++){ %>
    <a href="list.jsp?pageNum=<%=i %> ">[<%=i %>]</a>
    <%} %>
-   <% if(endPage<pageCount){%><a href="list.jsp?pageNum=<%=startPage + bottomLine%> ">[´ÙÀ½]</a> <%} %>
+   <% if(endPage<pageCount){%><a href="list.jsp?pageNum=<%=startPage + bottomLine%> ">[ë‹¤ìŒ]</a> <%} %>
   
    <%} %>
    </div>
-</body>
+</body> 
+ìˆ˜ì •í–ˆìŠµë‹ˆë‹¤.
 </html>
