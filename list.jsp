@@ -120,5 +120,5 @@ if(boardid==null) boardid="1";
    <%} %>
    </div>
 </body> 
-수정했습니다.
+수정했습니다. test branch
 </html>
